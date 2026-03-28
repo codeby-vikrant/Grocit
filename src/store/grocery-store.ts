@@ -48,6 +48,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
             set({ isLoading: false })
         }
     },
+
     addItems: async (input) => {
         set({ error: null })
         try {
@@ -70,6 +71,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
             set({ error: "Something went wrong" })
         }
     },
+
     updateQuantity: async (id, quantity) => {
         const nextQuantity = Math.max(1, quantity)
         set({ error: null })
@@ -82,13 +84,14 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
             const payload = (await response.json()) as ItemResponse
             if (!response.ok) throw new Error(`Request failed (${response.status})`)
             set((state) => ({
-                items: state.items.map((item) => (item.id ? payload.item : item))
+                items: state.items.map((item) => (item.id === id ? payload.item : item))
             }))
         } catch (error) {
             console.error("Error updating quantity", error)
             set({ error: "Something went wrong" })
         }
     },
+
     togglePurchased: async (id) => {
         const currentItem = get().items.find((item) => item.id === id)
         if (!currentItem) return
@@ -110,6 +113,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
             set({ error: "Something went wrong" })
         }
     },
+
     removeItem: async (id) => {
         set({ error: null })
         try {
@@ -123,6 +127,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
             set({ error: "Something went wrong" })
         }
     },
+
     clearPurchased: async () => {
         set({ error: null })
         try {
