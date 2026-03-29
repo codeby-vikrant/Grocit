@@ -6,22 +6,26 @@ import UserProfile from "@/components/insights/UserProfile";
 import TabScreenBackground from "@/components/TabScreenBackground";
 import React from "react";
 import { ScrollView } from "react-native";
+import SentryFeedbackButton from "../../components/insights/SentryFeedbackButton";
 
 const InsightsScreen = () => {
   return (
-    <ScrollView
-      className="flex-1 bg-background py-4"
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ padding: 20, gap: 14 }}
-      contentInsetAdjustmentBehavior="automatic"
-    >
-      <TabScreenBackground />
-      <UserProfile />
-      <InsightsStatsSection />
-      <InsightsCategorySection />
-      <InsightsPrioritySection />
-      <ClearCompletedButton />
-    </ScrollView>
+    <>
+      <ScrollView
+        className="flex-1 bg-background py-4"
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ padding: 20, gap: 14 }}
+        contentInsetAdjustmentBehavior="automatic"
+      >
+        <TabScreenBackground />
+        <UserProfile />
+        <InsightsStatsSection />
+        <InsightsCategorySection />
+        <InsightsPrioritySection />
+        <ClearCompletedButton />
+      </ScrollView>
+      <SentryFeedbackButton />
+    </>
   );
 };
 
