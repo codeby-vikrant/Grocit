@@ -5,8 +5,13 @@ export async function PATCH(request: Request, { id }: { id: string }) {
         const body = await request.json()
 
         const item = body.quantity ? await updateGroceryItemQuantity(id, body.quantity) : await setGroceryItemPurchased(id, body.purchased ?? true)
-    } catch (error) {
 
+        if (!item) return Response.json({ error: "Item not found" }, { status: 404 })
+
+        return Response.json({ item })
+    } catch (error) {
+        const message = error instanceof Error ? error.message : "Failed to update item";
+        return Response.json({ error: message }, { status: 500 });
     }
 }
 
