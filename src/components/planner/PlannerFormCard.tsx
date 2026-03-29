@@ -57,13 +57,13 @@ const PlannerFormCard = () => {
       <Text className="text-sm font-semibold text-foreground">Item Name</Text>
 
       <View className="mt-2 flex-row items-center rounded-2xl border border-border bg-muted px-4 py-3">
-        <FontAwesome6 name="bag-shopping" size={13} color="#5b7567" />
+        <FontAwesome6 name="bag-shopping" size={13} color="#a89ea9" />
         <TextInput
           value={name}
           onChangeText={setName}
           placeholder="Ex: Blueberries"
           className="ml-3 flex-1 text-base text-foreground"
-          placeholderTextColor="#8aa397"
+          placeholderTextColor="#79697b"
         />
       </View>
 
@@ -71,13 +71,13 @@ const PlannerFormCard = () => {
         Quantity
       </Text>
       <View className="mt-2 flex-row items-center rounded-2xl border border-border bg-muted px-4 py-3">
-        <FontAwesome6 name="hashtag" size={13} color="#5b7567" />
+        <FontAwesome6 name="hashtag" size={13} color="#a89ea9" />
         <TextInput
           value={quantity}
           onChangeText={handleQuantityChange}
           keyboardType="number-pad"
           placeholder="1"
-          placeholderTextColor="#8aa397"
+          placeholderTextColor="#79697b"
           className="ml-3 flex-1 text-base text-foreground"
         />
       </View>
@@ -97,7 +97,7 @@ const PlannerFormCard = () => {
               <FontAwesome6
                 name={categoryIcons[option]}
                 size={12}
-                color={active ? "#fff" : "#486856"}
+                color={active ? "#fff" : "#79697b"}
               />
               <Text
                 className={`ml-2 text-sm font-semibold ${active ? "text-primary-foreground" : "text-secondary-foreground"}`}
@@ -130,7 +130,7 @@ const PlannerFormCard = () => {
               <FontAwesome6
                 name={icon}
                 size={12}
-                color={active ? "#ffffff" : "#486856"}
+                color={active ? "#ffffff" : "#79697b"}
               />
               <Text
                 className={`mt-1 text-sm font-semibold capitalize ${active ? "text-primary-foreground" : "text-secondary-foreground"}`}
@@ -150,7 +150,7 @@ const PlannerFormCard = () => {
         <FontAwesome6
           name="plus"
           size={14}
-          color={canCreate ? "#ffffff" : "#7a9386"}
+          color={canCreate ? "#ffffff" : "#79697b"}
         />
         <Text
           className={`ml-2 text-base font-semibold ${canCreate ? "text-primary-foreground" : "text-muted-foreground"}`}
