@@ -1,5 +1,4 @@
 const { neon } = require("@neondatabase/serverless");
-const { error } = require("node:console");
 const crypto = require("node:crypto");
 
 const databaseUrl = process.env.DATABASE_URL;
