@@ -1,12 +1,42 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { useGroceryStore } from "@/store/grocery-store";
+import React from "react";
+import { Text, View } from "react-native";
 
 const InsightsPrioritySection = () => {
-  return (
-    <View>
-      <Text>InsightsPrioritySection</Text>
-    </View>
-  )
-}
+  const { items } = useGroceryStore();
+  const highPriority = items.filter(
+    (item) => item.priority === "high" && !item.purchased,
+  ).length;
+  const highPriorityTone =
+    highPriority === 0
+      ? "Everything Critical Is Covered."
+      : "Handle These First For A Smoother Trip.";
 
-export default InsightsPrioritySection
+  return (
+    <View className="rounded-3xl border border-border bg-card p-4">
+      <View className="flex-row items-center justify-between">
+        <Text className="text-sm font-semibold text-foreground">
+          High Priority Remaining
+        </Text>
+        <View
+          className={`rounded-full px-3 py-1 ${highPriority ? "bg-priority-high" : "bg-priority-low"}`}
+        >
+          <Text
+            className={`text-xs font-bold uppercase ${highPriority ? "text-priority-high-foreground" : "text-priority-low-foreground"}`}
+          >
+            {highPriority ? "Action" : "Clear"}
+          </Text>
+        </View>
+      </View>
+
+      <Text className="mt-1 text-3xl font-extrabold text-foreground">
+        {highPriority}
+      </Text>
+      <Text className="mt-1 text-sm text-muted-foreground">
+        {highPriorityTone}
+      </Text>
+    </View>
+  );
+};
+
+export default InsightsPrioritySection;
