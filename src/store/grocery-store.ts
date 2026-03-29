@@ -23,7 +23,7 @@ type GroceryStore = {
     isLoading: boolean;
     error: string | null;
     loadItems: () => Promise<void>;
-    addItems: (input: CreateItemInput) => Promise<GroceryItem | void>;
+    addItem: (input: CreateItemInput) => Promise<GroceryItem | void>;
     updateQuantity: (id: string, quantity: number) => Promise<void>;
     togglePurchased: (id: string) => Promise<void>;
     removeItem: (id: string) => Promise<void>;
@@ -49,7 +49,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
         }
     },
 
-    addItems: async (input) => {
+    addItem: async (input) => {
         set({ error: null })
         try {
             const response = await fetch("/api/items", {
