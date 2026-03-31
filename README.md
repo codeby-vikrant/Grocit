@@ -1,56 +1,63 @@
-# Welcome to your Expo app 👋
+# Grocit 🛒
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Grocit is a clean and minimal grocery list app designed to make everyday shopping simple and organized. It allows users to manage grocery items efficiently with real-time tracking and smart insights.
 
-## Get started
+# Features 🚀
 
-1. Install dependencies
+- User authentication (Login support)
+- Add grocery items with:
+  - Name
+  - Quantity
+  - Category/Tag
+- Mark items as completed with a single tap
+- Increase/decrease item quantity easily
+- Separate sections for active and completed items
+- Insights dashboard:
+  - Completion rate
+  - Items by category
+  - Total, pending, and completed stats
+- Clean and modern UI
 
-   ```bash
+# Tech Stack 🛠️
+
+- React Native (Expo)
+- Clerk Authentication
+- JavaScript / TypeScript
+- Modern UI design with custom styling
+
+# Screenshots 📸
+
+## Login Screen
+![Screenshot_20260331_194428_Grocit](https://github.com/user-attachments/assets/f0992114-2d6c-4491-b7a6-dc1a13699cb6)
+## Home Screen
+![Screenshot_20260331_194606_Grocit](https://github.com/user-attachments/assets/9cc96423-a9bd-4809-ab13-27e723c79cb5)
+## Add Grocery Screen
+![Screenshot_20260331_194507_Grocit](https://github.com/user-attachments/assets/fc49d7e9-4ef5-4a2d-be0e-1f7073a4ca8b)
+## Insights Screen
+![Screenshot_20260331_194522_Grocit](https://github.com/user-attachments/assets/bcdc0add-b9cf-45df-8abb-506f4b87909f)
+
+# Installation ⚙️
+
+1. Clone the repository:
+   git clone https://github.com/codeby-vikrant/Grocit
+
+2. Navigate to the project folder:
+   cd grocit
+
+3. Install dependencies:
    npm install
-   ```
 
-2. Start the app
-
-   ```bash
+4. Start the development server:
    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+# Usage 📱
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Login to your account
+- Add grocery items with quantity and category
+- Manage your list by marking items as done
+- Adjust quantities with + / - buttons
+- View insights in the dashboard
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+# Author 👨‍💻
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Vikrant Vani
