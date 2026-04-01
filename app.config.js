@@ -50,16 +50,16 @@ export default {
         },
       ],
       "expo-web-browser",
-      // [
-      //   "@sentry/react-native/expo",
-      //   {
-      //     url: "https://sentry.io/",
-      //     project: "grocit",
-      //     organization: "vikrant-16",
-      //     authToken: process.env.SENTRY_AUTH_TOKEN,
-      //     disableNativeIntegration: true,
-      //   },
-      // ],
+      [
+        "@sentry/react-native/expo",
+        {
+          url: "https://sentry.io/",
+          project: "grocit",
+          organization: "vikrant-16",
+          authToken: process.env.SENTRY_AUTH_TOKEN,
+          disableNativeIntegration: true,
+        },
+      ],
     ],
     experiments: {
       typedRoutes: true,
