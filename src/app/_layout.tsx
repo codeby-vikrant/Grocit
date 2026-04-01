@@ -10,23 +10,21 @@ import { Stack } from "expo-router";
 import { useColorScheme } from "react-native";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import "../../global.css";
-import Constants from "expo-constants";
 
-const publishableKey =
-  Constants.expoConfig?.extra?.clerkPublishableKey;
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
+if (!publishableKey) {
+  throw new Error("Add your Clerk Publishable Key to the .env file");
+}
 
 Sentry.init({
-  dsn: Constants.expoConfig?.extra?.sentryDsn,
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
 
   integrations: [Sentry.feedbackIntegration()],
 });
 
 export default Sentry.wrap(function RootLayout() {
   const colorScheme = useColorScheme();
-
-  if (!publishableKey) {
-    return null;
-  }
 
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
