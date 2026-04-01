@@ -1,4 +1,4 @@
-import "dotenv/config";
+import 'dotenv/config';
 
 export default {
   expo: {
@@ -14,22 +14,22 @@ export default {
       icon: {
         light: "./assets/images/ios-light.png",
         dark: "./assets/images/ios-dark.png",
-        tinted: "./assets/images/ios-tinted.png",
+        tinted: "./assets/images/ios-tinted.png"
       },
-      bundleIdentifier: "com.codeby-vikrant.grocit",
+      bundleIdentifier: "com.codeby-vikrant.grocit"
     },
     android: {
       package: "com.codebyvikrant.grocit",
       adaptiveIcon: {
         backgroundColor: "#FFFFFF",
         foregroundImage: "./assets/images/adaptive-icon.png",
-        monochromeImage: "./assets/images/adaptive-icon-monochrome.png",
+        monochromeImage: "./assets/images/adaptive-icon-monochrome.png"
       },
-      predictiveBackGestureEnabled: false,
+      predictiveBackGestureEnabled: false
     },
     web: {
       output: "server",
-      favicon: "./assets/images/favicon.png",
+      favicon: "./assets/images/favicon.png"
     },
     plugins: [
       "@clerk/expo",
@@ -45,33 +45,31 @@ export default {
             backgroundColor: "#000000",
             image: "./assets/images/splash-icon-light.png",
             imageWidth: 200,
-            resizeMode: "contain",
-          },
-        },
+            resizeMode: "contain"
+          }
+        }
       ],
       "expo-web-browser",
-      // [
-      //   "@sentry/react-native/expo",
-      //   {
-      //     url: "https://sentry.io/",
-      //     project: "grocit",
-      //     organization: "vikrant-16",
-      //     authToken: process.env.SENTRY_AUTH_TOKEN,
-      //     disableNativeIntegration: true,
-      //   },
-      // ],
+      [
+        "@sentry/react-native/expo",
+        {
+          url: "https://sentry.io/",
+          project: "grocit",
+          organization: "vikrant-16"
+        }
+      ]
     ],
     experiments: {
       typedRoutes: true,
-      reactCompiler: true,
+      reactCompiler: true
     },
     extra: {
       router: {},
       eas: {
-        projectId: "64505e0b-980e-4e58-8867-9194bc079e44",
+        projectId: "64505e0b-980e-4e58-8867-9194bc079e44"
       },
-      clerkPublishableKey: process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY,
+      clerkPublishableKey: process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY
     },
-    owner: "codeby-vikrant",
-  },
+    owner: "codeby-vikrant"
+  }
 };
